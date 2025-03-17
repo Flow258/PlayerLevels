@@ -1,0 +1,37 @@
+name: PlayerLevels
+version: 1.0.0
+main: com.flow258.playerLevels.PlayerLevels
+api-version: '1.21'
+depend: [PlaceholderAPI]
+description: A plugin that calculates player levels based on statistics
+author: flow258
+
+commands:
+  level:
+    description: Check your or another player's level, or manage the plugin
+    usage: /<command> [player|reload|set <player> <level>]
+    aliases: [lvl]
+    permission: playerlevels.use
+  leveltop:
+    description: Show the leaderboard of highest level players
+    usage: /<command> [limit]
+    aliases: [toplevel, ltop]
+    permission: playerlevels.leaderboard
+
+permissions:
+  playerlevels.use:
+    description: Allows checking own level
+    default: true
+  playerlevels.others:
+    description: Allows checking other players' levels
+    default: op
+  playerlevels.leaderboard:
+    description: Allows viewing the leaderboard
+    default: true
+  playerlevels.admin:
+    description: Allows reloading config and setting player levels
+    default: op
+    children:
+      playerlevels.use: true
+      playerlevels.others: true
+      playerlevels.leaderboard: true
