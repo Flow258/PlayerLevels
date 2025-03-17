@@ -1,6 +1,6 @@
 # PlayerLevels Plugin
 
-A Minecraft plugin that introduces player levels based on statistics tracking for Paper 1.21.3.
+A Minecraft plugin that introduces player levels based on statistics tracking
 
 ## Features
 
