@@ -7,13 +7,13 @@ A Minecraft plugin that introduces player levels based on statistics tracking
 - **Dynamic Leveling**: Players gain levels as they play based on their in-game statistics
 - **Balanced Scaling**: Higher levels require exponentially more XP
 - **Configurable Stats**: Server owners choose which stats affect leveling
-- **Level Rewards**: Automatically reward players when they reach certain levels
+- **Level Rewards**: reward players when they reach certain levels
 - **PlaceholderAPI Integration**: Use player level information in other plugins
-- **Leaderboard**: View top players by level
+- **Leaderboard**: View top players
 
 ## Requirements
 
-- Paper 1.21.3 or newer
+- Paper 1.21.3/newer
 - [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) with Statistic Expansion
 
 ## Installation
