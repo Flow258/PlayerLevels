@@ -1,0 +1,153 @@
+# PlayerLevels Configuration - Enhanced Version
+# Version 2.0.0
+
+settings:
+  enable-plugin: true
+
+  # Level-up announcements
+  level-up-broadcast: true
+  level-up-message: "&6%player% &ehas reached &aLevel %level%&e!"
+
+  levels:
+    base-xp: 100       # Base XP required for level 1
+    xp-multiplier: 1.5 # XP increase per level (exponential scaling)
+
+  # XP Boost System
+  xp-boost:
+    multiplier: 2.0    # XP multiplier when boost is active
+
+  # Statistics that grant XP
+  statistics:
+    1:
+      statistic: "MINE_BLOCK"
+      material: "STONE"
+      xp-value: 5      # Gain 5 XP per stone mined
+    2:
+      statistic: "MINE_BLOCK"
+      material: "DIAMOND_ORE"
+      xp-value: 50     # Gain 50 XP per diamond ore mined
+    3:
+      statistic: "MINE_BLOCK"
+      material: "DEEPSLATE_DIAMOND_ORE"
+      xp-value: 50     # Gain 50 XP per deepslate diamond ore
+    4:
+      statistic: "KILL_ENTITY"
+      entity: "ZOMBIE"
+      xp-value: 20     # Gain 20 XP per zombie killed
+    5:
+      statistic: "KILL_ENTITY"
+      entity: "SKELETON"
+      xp-value: 25     # Gain 25 XP per skeleton killed
+    6:
+      statistic: "KILL_ENTITY"
+      entity: "CREEPER"
+      xp-value: 30     # Gain 30 XP per creeper killed
+    7:
+      statistic: "KILL_ENTITY"
+      entity: "ENDER_DRAGON"
+      xp-value: 1000   # Gain 1000 XP per Ender Dragon killed
+    8:
+      statistic: "KILL_ENTITY"
+      entity: "WITHER"
+      xp-value: 800    # Gain 800 XP per Wither killed
+    9:
+      statistic: "PLAY_ONE_MINUTE"
+      xp-value: 0.05   # Gain 0.05 XP per minute played (3 XP per hour)
+    10:
+      statistic: "DEATHS"
+      xp-value: -50    # Lose 50 XP per death
+    11:
+      statistic: "JUMP"
+      xp-value: 0.1    # Gain 0.1 XP per jump
+    12:
+      statistic: "WALK_ONE_CM"
+      xp-value: 0.001  # Gain 0.001 XP per cm walked (1 XP per 10 blocks)
+    13:
+      statistic: "DAMAGE_DEALT"
+      xp-value: 0.05   # Gain 0.05 XP per damage point dealt
+    14:
+      statistic: "CHEST_OPENED"
+      xp-value: 1      # Gain 1 XP per chest opened
+    15:
+      statistic: "FISH_CAUGHT"
+      xp-value: 10     # Gain 10 XP per fish caught
+
+  # Level milestone rewards
+  rewards:
+    5:
+      commands:
+        - "give %player% diamond 1"
+      message: "&aYou reached Level 5! Enjoy a diamond!"
+    10:
+      commands:
+        - "give %player% diamond 5"
+        - "eco give %player% 1000"
+      message: "&eLevel 10! You got 5 diamonds and $1,000!"
+    25:
+      commands:
+        - "give %player% diamond_sword 1"
+        - "eco give %player% 5000"
+      message: "&6Congratulations on Level 25! You've earned a diamond sword and $5,000!"
+    50:
+      commands:
+        - "give %player% diamond_block 5"
+        - "eco give %player% 10000"
+      message: "&d&lLevel 50! Incredible achievement! Here's 5 diamond blocks and $10,000!"
+    100:
+      commands:
+        - "give %player% netherite_ingot 5"
+        - "eco give %player% 50000"
+      message: "&c&lLEVEL 100! &6&lYou are truly a master! Enjoy netherite and $50,000!"
+
+  # Achievement Awards System
+  awards:
+    level_10_pioneer:
+      display-name: "&6Level 10 Pioneer"
+      requirement: "level=10"
+      message: "&a✨ Achievement Unlocked: &6Level 10 Pioneer&a! Keep climbing!"
+      commands:
+        - "give %player% golden_apple 3"
+    level_25_expert:
+      display-name: "&bLevel 25 Expert"
+      requirement: "level=25"
+      message: "&a✨ Achievement Unlocked: &bLevel 25 Expert&a! You're doing amazing!"
+      commands:
+        - "give %player% enchanted_golden_apple 1"
+    level_50_master:
+      display-name: "&5Level 50 Master"
+      requirement: "level=50"
+      message: "&a✨ Achievement Unlocked: &5Level 50 Master&a! Legendary status!"
+      commands:
+        - "give %player% totem_of_undying 1"
+    level_100_legend:
+      display-name: "&c&lLevel 100 LEGEND"
+      requirement: "level=100"
+      message: "&6&l✨ LEGENDARY ACHIEVEMENT UNLOCKED! &c&lLevel 100 LEGEND! &6&l✨"
+      commands:
+        - "give %player% netherite_block 3"
+        - "eco give %player% 100000"
+    top_player:
+      display-name: "&e&l⭐ #1 Player"
+      requirement: "rank=1"
+      message: "&6&l✨ You're #1! You earned the Top Player award!"
+      commands:
+        - "give %player% diamond_block 10"
+        - "eco give %player% 25000"
+    top_3_player:
+      display-name: "&6Top 3 Player"
+      requirement: "rank=3"
+      message: "&e✨ You made it to the Top 3! Amazing work!"
+      commands:
+        - "give %player% diamond_block 5"
+        - "eco give %player% 10000"
+
+storage:
+  type: "sqlite"  # "sqlite" or "mysql"
+
+  # MySQL connection settings (only used if type is "mysql")
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "minecraft"
+    username: "root"
+    password: ""

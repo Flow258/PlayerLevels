@@ -1,0 +1,57 @@
+# =========================================
+# IntelliJ / IDEA specific files
+# =========================================
+.idea/
+*.iml
+*.iws
+/shelf/
+/workspace.xml
+
+# =========================================
+# Build output folders
+# =========================================
+target/
+build/
+out/
+
+# =========================================
+# Logs, crash reports, temp files
+# =========================================
+logs/
+*.log
+*.tmp
+
+# =========================================
+# OS generated files
+# =========================================
+.DS_Store
+Thumbs.db
+
+# =========================================
+# Maven / Gradle
+# =========================================
+.mvn/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+**/build/
+**/target/
+
+# =========================================
+# Dependency caches
+# =========================================
+dependency-reduced-pom.xml
+
+# =========================================
+# Plugin artifacts (compiled jars)
+# =========================================
+*.jar
+!src/main/resources/        # keep plugin.yml etc.
+!src/**/                     # keep source files
+
+# =========================================
+# Environment or secret config files
+# =========================================
+.env
+config.yml
+*.properties
+*.local.yml
